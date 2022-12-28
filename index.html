@@ -1,0 +1,163 @@
+<!-- campaign.html -->
+<html>
+<head>
+  <title>Campaign</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Title and logo */
+    #title-image {
+      width: 30%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #reddit-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height:120px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10;
+}
+
+    /* Duck image and heading */
+    #cute-duck {
+      height: 300px;
+      margin: 20px 0;
+    }
+    h2 {
+      font-size: 60px;
+    }
+    body {
+  /* Other styles go here */
+  background-color: #333;
+}
+body {
+  /* Other styles go here */
+  color: #fff;
+}
+
+    /* Payment button */
+    #payment-button input {
+      width: 300px;
+      height: 90px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0070ba;
+      color: white;
+      font-size: 20px;
+    }
+    #payment-button input:hover {
+      background-color: #0059a5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Title and logo -->
+  <img src="crowdgrey.png" id="title-image" alt="title image">
+  <a href="https://www.reddit.com/r/crowdsupp/"><img src="https://i.imgur.com/lnnoLD8.png" id="reddit-logo" alt="Reddit logo"></a>
+
+  <!-- Duck image and heading -->
+  <h2>JCS make new videos!</h2>
+  <img src="https://i.imgur.com/jA3XLbe.jpeg" id="cute-duck" alt="cute duck">
+
+  <!-- PayPal Donate Button -->
+  <form id="payment-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: flex; justify-content: flex-end;">
+    <!-- Replace "your_email@example.com" with your PayPal account email address -->
+    <input type="hidden" name="business" value="eskil.costermans1@gmail.com">
+    <input type="hidden" name="cmd" value="_donations">
+    <!-- Replace "Donation" with the name of your organization or the purpose of the donation -->
+    <input type="hidden" name="item_name" value="Donation">
+    <!-- Set the currency code (e.g., USD, EUR, GBP) -->
+    <input type="hidden" name="currency_code" value="USD">
+    <!-- Use the PayPal button image provided by PayPal (or use your own image) -->
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" width="200" height="100">
+</form>
+<!-- campaign.html -->
+<html>
+<head>
+  <title>Campaign</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: sans-serif;
+    }
+
+    /* Funds raised */
+    #funds-raised {
+      font-size: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    #funds-raised span {
+      font-weight: bold;
+      color: #0070ba;
+    }
+
+    /* Timer */
+    #timer {
+      font-size: 30px;
+      text-align: center;
+      margin: 20px 0;
+      color: #0070ba;
+    }
+  </style>
+</head>
+<body>
+  <!-- Funds raised and timer -->
+  <div id="funds-raised">Funds Raised: $<span id="amount">0</span></div>
+  <div id="timer"></div>
+  
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 30);
+  
+    // Set the initial amount of funds raised
+    var fundsRaised = 0;
+  
+    // Update the count down and funds raised every 1 second
+    var x = setInterval(function() {
+      // Get today's date and time
+      var now = new Date().getTime();
+  
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+  
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      // Display the result in the element with id="timer"
+      document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+  
+      // Increment the amount of funds raised
+    fundsRaised += 0
+  
+  // Display the updated amount of funds raised
+  document.getElementById("amount").innerHTML = fundsRaised.toFixed(2);
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<!-- Description -->
+<div id="description">
+  <h3>What is this project all about?</h3>
+  <p>This campaign is made because we want JCS to upload new videos, if JCS confirms they will make new videos, the money raised will be sent to them.</p>
