@@ -123,8 +123,7 @@ body {
     var countDownDate = new Date();
     countDownDate.setDate(countDownDate.getDate() + 30);
   
-    // Set the initial amount of funds raised
-    var fundsRaised = 0;
+
   
     // Update the count down and funds raised every 1 second
     var x = setInterval(function() {
@@ -156,8 +155,10 @@ body {
     document.getElementById("timer").innerHTML = "EXPIRED";
   }
 }, 1000);
+var countDownDate = new Date("Jan 7, 2023 15:37:25").getTime();
 </script>
 <!-- Description -->
 <div id="description">
   <h3>What is this project all about?</h3>
   <p>This campaign is made because we want JCS to upload new videos, if JCS confirms they will make new videos, the money raised will be sent to them.</p>
+
