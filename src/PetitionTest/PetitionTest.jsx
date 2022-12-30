@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Grid, Paper, Stack, Button, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText, Divider } from '@mui/material'
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import _ from "lodash"
@@ -15,33 +15,21 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-between",
         alignItems: "center",
         height: "40px",
-        borderBottom: "1px solid #eee",
-
+        borderBottom: "1px solid #555",
+        backgroundColor: "#333",
+        padding: "5px"
 
     },
     crowdsupp_logo: {
-        // fontSize: "30px",
-        // lineHeight: "40px",
-        height: "40px",
-        fontWeight: "600",
-        display: "flex",
-        alignItems: "center"
-
-    },
-    crowdsupp_logo_text: {
-        fontSize: "20px",
-        lineHeight: "40px",
-        height: "40px",
-        marginLeft: "10px"
-    },
-    crowdsupp_logo_face: {
-        fontSize: "40px",
-        lineHeight: "50px",
-        height: "40px",
+        height: "30px",
     },
     reddit: {
-        height: "35px",
-        width: "35px",
+        height: "30px",
+        width: "30px",
+        borderRadius: "50%"
+    },
+    reddit_a: {
+        height: "30px",
     },
     picture: {
         width: "100%",
@@ -53,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         fontSize: "24px",
-        fontWeight: "600"
+        fontWeight: "600",
+        color: "#e8e8e8"
     },
     button: {
         backgroundColor: "#ff9800",
@@ -67,17 +56,18 @@ const useStyles = makeStyles((theme) => ({
         color: green[500]
     },
     money: {
-      marginLeft:"20px",
-      color: green[500]
+        marginLeft: "20px",
+        color: green[500]
     },
     timer: {
-        borderTop: "1px solid #eee"
+        borderTop: "1px solid #555"
     },
-    timeLeft:{
-        color:"#aaa"
+    timeLeft: {
+        color: "#aaa"
     },
     description: {
-        borderTop: "1px solid #eee"
+        borderTop: "1px solid #555",
+        color: "#e8e8e8"
     }
 
 }));
@@ -89,6 +79,7 @@ function PetitionTest() {
         date: "2023/01/29 18:42:00"
     }
     const [open, setOpen] = useState(false);
+    const suppFormRef = useRef()
     const classes = useStyles();
 
     const [leftTime, setLeftTime] = useState("")
@@ -120,16 +111,19 @@ function PetitionTest() {
         // copyUrl(url);
     }
 
+    function clickSupp() {
+        console.log(suppFormRef)
+        console.log(document.getElementById("payment-button"))
+        // suppFormRef.current.submit()
+        document.getElementById("payment-button").submit()
+    }
+
     function copyToClipboard(textToCopy) {
-        // navigator clipboard 需要https等安全上下文
         if (navigator.clipboard && window.isSecureContext) {
-            // navigator clipboard 向剪贴板写文本
             return navigator.clipboard.writeText(textToCopy);
         } else {
-            // 创建text area
             let textArea = document.createElement("textarea");
             textArea.value = textToCopy;
-            // 使text area不在viewport，同时设置不可见
             textArea.style.position = "absolute";
             textArea.style.opacity = 0;
             textArea.style.left = "-999999px";
@@ -138,7 +132,6 @@ function PetitionTest() {
             textArea.focus();
             textArea.select();
             return new Promise((res, rej) => {
-                // 执行复制命令并移除文本框
                 document.execCommand('copy') ? res() : rej();
                 textArea.remove();
             });
@@ -153,13 +146,10 @@ function PetitionTest() {
 
     return (
         <>
-            <Stack spacing={0}>
+            <Stack spacing={0} sx={{ backgroundColor: "#333", height: "100vh" }}>
                 <div className={classes.header}>
-                    <div className={classes.crowdsupp_logo}>
-                        <div className={classes.crowdsupp_logo_text}>Crowdsupp&nbsp;:&nbsp;)</div>
-                        {/* <div className={classes.crowdsupp_logo_face}></div> */}
-                    </div>
-                    <a href="https://www.reddit.com/r/crowdsupp/"><img className={classes.reddit} src="/reddit_logo.jpeg" alt="" /></a>
+                    <img className={classes.crowdsupp_logo} src="/crowdsupp_logo.png" alt="" />
+                    <a href="https://www.reddit.com/r/crowdsupp/" className={classes.reddit_a} ><img className={classes.reddit} src="/reddit_logo.jpeg" alt="" /></a>
                 </div>
                 <Grid2 p={2}>
                     <img className={classes.picture} src="/petition_test_img.jpeg" alt="" />
@@ -185,21 +175,29 @@ function PetitionTest() {
                         </Button>
                     </Grid2>
                     <Grid2 xs={12} mt={1}>
-                        <Button variant="contained" fullWidth sx={{
-                            backgroundColor: "#ff9800",
-                            borderRadius: "10px",
-                            height: "40px",
-                            color: "#333",
-                            fontWeight: "600"
-                        }}>
-                            Supp now !
-                        </Button>
+                        <form ref={suppFormRef} id="payment-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+                            <input type="hidden" name="business" value="eskil.costermans1@gmail.com" />
+                            <input type="hidden" name="cmd" value="_donations" />
+                            <input type="hidden" name="item_name" value="Donation" />
+                            <input type="hidden" name="currency_code" value="USD" />
+                            <Button variant="contained" fullWidth sx={{
+                                backgroundColor: "#ff9800",
+                                borderRadius: "10px",
+                                height: "40px",
+                                color: "#333",
+                                fontWeight: "600"
+                            }}
+                                onClick={clickSupp}>
+                                Supp now !
+                            </Button>
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" width="0" height="0" />
+                        </form>
                     </Grid2>
                 </Grid2>
                 <Grid2 container p={2} className={classes.timer}>
                     <Grid2 xs={6}>
                         <AttachMoneyIcon className={classes.icon_money} />
-                        <div className={classes.money}>{"0.00" } raised</div>
+                        <div className={classes.money}>{"0.00"} raised</div>
                     </Grid2>
                     <Grid2 xs={6} className={classes.timeLeft}>
                         <div >{leftTime} left</div>
