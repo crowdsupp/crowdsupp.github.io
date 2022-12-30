@@ -1,7 +1,7 @@
 {
   "name": "project-crowd",
   "version": "0.1.0",
-  "homepage": "https://crowdsupp.github.io",
+  "homepage": "https://crowdsupp.github.io/test",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -31,8 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b petition_test -d build"
+    "deploy": "gh-pages -b petition_test -d docs"
   },
   "eslintConfig": {
     "extends": [
