@@ -9,6 +9,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+
+// import crowdsupp_logo from "../../public/crowdsupp_logo"
+
 const useStyles = makeStyles((theme) => ({
     header: {
         display: "flex",
@@ -148,11 +151,11 @@ function PetitionTest() {
         <>
             <Stack spacing={0} sx={{ backgroundColor: "#333", height: "100vh" }}>
                 <div className={classes.header}>
-                    <img className={classes.crowdsupp_logo} src="/crowdsupp_logo.png" alt="" />
-                    <a href="https://www.reddit.com/r/crowdsupp/" className={classes.reddit_a} ><img className={classes.reddit} src="/reddit_logo.jpeg" alt="" /></a>
+                    <img className={classes.crowdsupp_logo} src="imgs/crowdsupp_logo.png" alt="" />
+                    <a href="https://www.reddit.com/r/crowdsupp/" className={classes.reddit_a} ><img className={classes.reddit} src="imgs/reddit_logo.jpeg" alt="" /></a>
                 </div>
                 <Grid2 p={2}>
-                    <img className={classes.picture} src="/petition_test_img.jpeg" alt="" />
+                    <img className={classes.picture} src="imgs/petition_test_img.jpeg" alt="" />
                 </Grid2>
                 <Grid2 container px={2}>
                     <Grid2 >
