@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/xueliangsui.github.io/crowdsupp2/static/css/main.9c8568b1.css",
-    "main.js": "/xueliangsui.github.io/crowdsupp2/static/js/main.231f80df.js",
-    "static/js/787.8e6e24bc.chunk.js": "/xueliangsui.github.io/crowdsupp2/static/js/787.8e6e24bc.chunk.js",
-    "index.html": "/xueliangsui.github.io/crowdsupp2/index.html",
-    "main.9c8568b1.css.map": "/xueliangsui.github.io/crowdsupp2/static/css/main.9c8568b1.css.map",
-    "main.231f80df.js.map": "/xueliangsui.github.io/crowdsupp2/static/js/main.231f80df.js.map",
-    "787.8e6e24bc.chunk.js.map": "/xueliangsui.github.io/crowdsupp2/static/js/787.8e6e24bc.chunk.js.map"
+    "main.css": "/static/css/main.9c8568b1.css",
+    "main.js": "/static/js/main.56b0449d.js",
+    "static/js/787.8e6e24bc.chunk.js": "/static/js/787.8e6e24bc.chunk.js",
+    "index.html": "/index.html",
+    "main.9c8568b1.css.map": "/static/css/main.9c8568b1.css.map",
+    "main.56b0449d.js.map": "/static/js/main.56b0449d.js.map",
+    "787.8e6e24bc.chunk.js.map": "/static/js/787.8e6e24bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c8568b1.css",
-    "static/js/main.231f80df.js"
+    "static/js/main.56b0449d.js"
   ]
 }
