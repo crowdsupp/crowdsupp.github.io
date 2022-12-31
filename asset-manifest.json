@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/crowdsupp.github.io/static/css/main.9c8568b1.css",
+    "main.js": "/crowdsupp.github.io/static/js/main.e7198c56.js",
+    "static/js/787.8e6e24bc.chunk.js": "/crowdsupp.github.io/static/js/787.8e6e24bc.chunk.js",
+    "index.html": "/crowdsupp.github.io/index.html",
+    "main.9c8568b1.css.map": "/crowdsupp.github.io/static/css/main.9c8568b1.css.map",
+    "main.e7198c56.js.map": "/crowdsupp.github.io/static/js/main.e7198c56.js.map",
+    "787.8e6e24bc.chunk.js.map": "/crowdsupp.github.io/static/js/787.8e6e24bc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c8568b1.css",
+    "static/js/main.e7198c56.js"
+  ]
+}
