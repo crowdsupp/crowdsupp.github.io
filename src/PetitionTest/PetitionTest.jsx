@@ -149,7 +149,7 @@ function PetitionTest() {
 
     return (
         <>
-            <Stack spacing={0} sx={{ backgroundColor: "#333", height: "100vh" }}>
+            <Stack spacing={0} sx={{ backgroundColor: "#333", minHeight: "100vh", maxWidth: "600px" ,margin:"0 auto"}}>
                 <div className={classes.header}>
                     <img className={classes.crowdsupp_logo} src="imgs/crowdsupp_logo.png" alt="" />
                     <a href="https://www.reddit.com/r/crowdsupp/" className={classes.reddit_a} ><img className={classes.reddit} src="imgs/reddit_logo.jpeg" alt="" /></a>

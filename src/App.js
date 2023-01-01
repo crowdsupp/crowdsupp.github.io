@@ -1,5 +1,6 @@
 
 import './App.css';
+import { useState, useEffect, useRef } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import HomePage from './HomePage/HomePage';
 import PetitionTest from './PetitionTest/PetitionTest';
@@ -14,6 +15,12 @@ const theme = createTheme({
 });
 
 function App() {
+
+
+  useEffect(() => {
+    document.title = 123
+  }, [])
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
