@@ -18,7 +18,7 @@ function App() {
 
 
   useEffect(() => {
-    document.title = 123
+    document.title = "Crowdsupp"
   }, [])
 
   return (

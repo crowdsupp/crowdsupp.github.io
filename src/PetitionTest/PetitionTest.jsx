@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     picture: {
         width: "100%",
-        maxHeight: "200px",
+        // maxHeight: "200px",
         textAlign: "center",
         borderRadius: "10px",
         objectFit: "cover",
@@ -77,9 +77,13 @@ const useStyles = makeStyles((theme) => ({
 
 function PetitionTest() {
     const petitionData = {
-        title: "JCS make new videos!",
-        description: "What is this project all about?\nThis campaign is made because we want JCS to upload new videos, if JCS confirms they will make new videos, the money raised will be sent to them.",
-        date: "2023/01/29 18:42:00"
+        title: "JCS make new videos in 2023!",
+        // description:
+        //     `What is this project all about? 
+        // This campaign is made because we want JCS to upload new videos. If JCS confirms they will make new videos, the money raised will be sent to them. Otherwise, your money will be refunded in full.
+
+        // 100% of the money raised will be sent to JCS. If you have any questions to the Crowdsupp team, click the Reddit logo in the top right corner and we will be happy to answer any of your questions.`,
+        date: "2023/01/18 00:00:00"
     }
     const [open, setOpen] = useState(false);
     const suppFormRef = useRef()
@@ -149,7 +153,7 @@ function PetitionTest() {
 
     return (
         <>
-            <Stack spacing={0} sx={{ backgroundColor: "#333", minHeight: "100vh", maxWidth: "600px" ,margin:"0 auto"}}>
+            <Stack spacing={0} sx={{ backgroundColor: "#333", minHeight: "100vh", maxWidth: "600px", margin: "0 auto" }}>
                 <div className={classes.header}>
                     <img className={classes.crowdsupp_logo} src="imgs/crowdsupp_logo.png" alt="" />
                     <a href="https://www.reddit.com/r/crowdsupp/" className={classes.reddit_a} ><img className={classes.reddit} src="imgs/reddit_logo.jpeg" alt="" /></a>
@@ -179,7 +183,7 @@ function PetitionTest() {
                     </Grid2>
                     <Grid2 xs={12} mt={1}>
                         <form ref={suppFormRef} id="payment-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
-                            <input type="hidden" name="business" value="eskil.costermans1@gmail.com" />
+                            <input type="hidden" name="business" value="crowdsupp.1@gmail.com" />
                             <input type="hidden" name="cmd" value="_donations" />
                             <input type="hidden" name="item_name" value="Donation" />
                             <input type="hidden" name="currency_code" value="USD" />
@@ -208,7 +212,10 @@ function PetitionTest() {
                 </Grid2>
                 <Grid2 container p={2} className={classes.description}>
                     <Grid2 >
-                        <div >{petitionData.description}</div>
+                        <div >What is this project all about?</div>
+                        <div >This campaign is made because we want JCS to upload new videos. If JCS confirms they will make new videos, the money raised will be sent to them. Otherwise, your money will be refunded in full.</div>
+                        <div >&nbsp;</div>
+                        <div >100% of the money raised will be sent to JCS. If you have any questions to the Crowdsupp team, click the Reddit logo in the top right corner and we will be happy to answer any of your questions.</div>
                     </Grid2>
                 </Grid2>
             </Stack>
